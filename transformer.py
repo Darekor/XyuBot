@@ -7,4 +7,13 @@ def transform(text):
     return output
 
 def __transformWord(word):
-    return "хуе"+word
+    cutOff = __findFirstVowel(word)+1
+    return "хуе"+(word[cutOff:])
+
+def __findFirstVowel(word):
+    firstVowelPosition = -1
+    for i in range(0,len(word)):
+        if word[i] in VOWELS:
+            firstVowelPosition=i
+            break
+    return firstVowelPosition
