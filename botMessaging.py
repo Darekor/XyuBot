@@ -1,3 +1,7 @@
+import requests 
+
+from transformer import *
+
 TOKEN = "5874591611:AAFqMXEA9WgPeVzWbyslDuV5ALKUKy23KSI"
 
 def parse_message(message):
@@ -10,9 +14,10 @@ def parse_message(message):
 
 def tel_send_message(chat_id, text):
     url = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
+    print(transform(text))
     payload = {
                 'chat_id': chat_id,
-                'text': text
+                'text': transform(text)
                 }
    
     r = requests.post(url,json=payload)

@@ -1,14 +1,10 @@
 from flask import Flask
 from flask import request
 from flask import Response
-import requests 
 
 from botMessaging import*
 
-
 app = Flask(__name__)
-
-
 
 @app.route('/', methods=['GET','POST'])
 def index():
