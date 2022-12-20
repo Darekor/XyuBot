@@ -2,7 +2,7 @@ import requests
 
 from transformer import *
 
-TOKEN = "5874591611:AAFqMXEA9WgPeVzWbyslDuV5ALKUKy23KSI"
+TOKEN = open('config.txt',mode='r').read()
 
 def parse_message(message):
     print("message-->",message)
