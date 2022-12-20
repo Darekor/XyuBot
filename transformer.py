@@ -7,7 +7,7 @@ def transform(text):
     return output
 
 def __transformWord(word):
-    firstVowelPos = __findFirstVowel(word)
+    firstVowelPos = __findFirstVowel(word.lower())
     return __pickStart(word,firstVowelPos)+(word[firstVowelPos+1:])
 
 def __findFirstVowel(word):
@@ -35,7 +35,7 @@ def __pickStart(word, firstVowelPos):
             start = "хуё"    
         case _:
             start = "хуе"
-    if word.isupper():
+    if word[0].isupper():
         start = start.capitalize()
     return start    
 
