@@ -20,20 +20,23 @@ def __findFirstVowel(word):
 
 def __pickStart(word, firstVowelPos):
     FIRSTVOWEL = word[firstVowelPos]
+    
 
     match word[firstVowelPos].lower():
         case 'а'|'я':
-            return "хуя"
+            start = "хуя"
         case 'у'|'ю':
-            return "хую"
+            start = "хую"
         case 'и'|'ы':
-            return "хуи"
+            start = "хуи"
         case 'е'|'э':
-            return "хуе"
+            start = "хуе"
         case 'о'|'ё':
-            return "хуё"    
+            start = "хуё"    
         case _:
-            return "хуе"
-    
+            start = "хуе"
+    if word.isupper():
+        start = start.capitalize()
+    return start    
 
     
